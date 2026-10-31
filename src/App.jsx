@@ -1,38 +1,69 @@
 import "./App.css";
+import Header from "./components/Header.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import StudentCard from "./components/StudentCard.jsx";
+
+const etudiants = [
+  {
+    prenom: "Amel",
+    nom: "Makhloufa",
+    email: "amelmakhloufa1@gmail.com",
+    telephone: "+216 99 999 999",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    ville: "Mahdia",
+    image: "/profil.png"
+  },
+  {
+    prenom: "Eya",
+    nom: "Rjeb",
+    email: "eyarjeb1@gmail.com",
+    telephone: "+216 99 999 999",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    ville: "Mahdia",
+    image: "/eya.jpeg"
+  },
+  {
+    prenom: "Abbderahmmen",
+    nom: "Ferjenni",
+    email: "ferjeniabderrahmen@gmail.com",
+    telephone: "+216 99 999 999",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    ville: "Mahdia",
+    image: "/ferjeni.jpeg"
+  }
+];
 
 function App() {
-  const handleContact = () => {
-    window.location.href = "mailto:amelmakhloufa1@gmail.com";
-  };
-
   return (
-    <div className="card">
-      <h2>Fiche étudiant</h2>
-      <img 
-        src="/profil.png" 
-        alt="Photo de profil Amel" 
-        style={{ 
-          borderRadius: "50%", 
-          width: "120px", 
-          height: "120px", 
-          objectFit: "cover", 
-          marginBottom: "15px" 
-        }} 
-      />
-      <p><strong>Nom & Prénom:</strong> Amel Makhloufa</p>
-      <p><strong>Email:</strong> amelmakhloufa1@gmail.com</p>
-      <p><strong>Téléphone:</strong> +216 22 978 666</p>
-      <p><strong>Filière:</strong> Génie Logiciel et Systèmes d'Information</p>
-      <p><strong>Année d'étude:</strong> 2ème année</p>
-      <p><strong>Groupe:</strong> GLSI 2</p>
-      <p><strong>Ville:</strong> Mahdia</p>
+    <div className="app-container">
+      <Header />
+      <Navbar />
       
-      <button 
-        onClick={handleContact} 
-        style={{ marginTop: "10px", padding: "10px 20px", cursor: "pointer" }}
-      >
-        Contacter
-      </button>
+      <div className="container" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", padding: "20px", gap: "20px" }}>
+        {etudiants.map((etudiant) => (
+          <StudentCard
+            key={etudiant.email}
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            image={etudiant.image}
+          />
+        ))}
+      </div>
+
+      <Footer />
     </div>
   );
 }
