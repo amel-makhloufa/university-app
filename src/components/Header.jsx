@@ -1,8 +1,9 @@
 import React from "react";
+import "./Header.css";
 
 function Header() {
   return (
-    <header style={{ textAlign: "center", padding: "15px", background: "#282c34", color: "white" }}>
+    <header className="app-header">
       <h1>Liste des étudiants</h1>
       <p>GLSI 2 - Année universitaire 2026-2027</p>
     </header>

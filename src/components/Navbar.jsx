@@ -1,11 +1,12 @@
 import React from "react";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav style={{ display: "flex", justifyContent: "center", gap: "20px", padding: "10px", background: "#444", color: "white" }}>
-      <a href="#accueil" style={{ color: "white", textDecoration: "none" }}>Accueil</a>
-      <a href="#etudiants" style={{ color: "white", textDecoration: "none" }}>Étudiants</a>
-      <a href="#contact" style={{ color: "white", textDecoration: "none" }}>Contact</a>
+    <nav className="app-navbar">
+      <a href="#accueil" className="nav-link">Accueil</a>
+      <a href="#etudiants" className="nav-link">Étudiants</a>
+      <a href="#contact" className="nav-link">Contact</a>
     </nav>
   );
 }
